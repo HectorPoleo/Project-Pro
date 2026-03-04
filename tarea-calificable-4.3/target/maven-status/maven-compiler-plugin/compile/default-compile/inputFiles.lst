@@ -1,0 +1,10 @@
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/app/Main.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/model/Persona.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/model/Usuario.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/repository/IUserRepository.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/repository/impl/UserRepositoryImpl.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/service/IAuthService.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/service/IUserService.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/service/impl/AuthServiceImpl.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/service/impl/UserServiceImpl.java
+/home/dam/Escritorio/tarea-calificable-4.3/src/main/java/com/docencia/util/Validaciones.java
