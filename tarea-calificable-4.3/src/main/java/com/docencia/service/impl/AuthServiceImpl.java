@@ -1,5 +1,32 @@
 package com.docencia.service.impl;
 
-public class AuthServiceImpl {
+import com.docencia.model.Usuario;
+import com.docencia.service.IAuthService;
+
+public class AuthServiceImpl implements IAuthService{
+
+    @Override
+    public Usuario register(int id, String nombre, String email, String password) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'register'");
+    }
+
+    @Override
+    public boolean login(String email, String password) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'login'");
+    }
+
+    @Override
+    public boolean isBloqueado(String email) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isBloqueado'");
+    }
+
+    @Override
+    public void desbloquear(String email) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'desbloquear'");
+    }
 
 }

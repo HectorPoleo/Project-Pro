@@ -16,7 +16,8 @@ public class Usuario extends Persona {
         email = null;
         fechaRegistro = null;
     }
-    public Usuario(String email){
+
+    public Usuario(String email) {
         super(0);
         this.email = email;
         this.fechaRegistro = null;
@@ -34,7 +35,6 @@ public class Usuario extends Persona {
     public String getEmail() {
         return this.email;
     }
-
 
     public String getPassword() {
         return this.password;
@@ -68,32 +68,32 @@ public class Usuario extends Persona {
         return this.fechaRegistro;
     }
 
-
     @Override
     public boolean equals(Object o) {
-        if (o == this)
+        if (o == this) {
             return true;
+        }
         if (!(o instanceof Usuario)) {
             return false;
         }
         Usuario usuario = (Usuario) o;
-        return Objects.equals(email, usuario.email) && Objects.equals(password, usuario.password) && intentosFallidos == usuario.intentosFallidos && bloqueado == usuario.bloqueado && Objects.equals(fechaRegistro, usuario.fechaRegistro);
+        return Objects.equals(email, usuario.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(email, password, intentosFallidos, bloqueado, fechaRegistro);
+        return Objects.hash(email);
     }
 
     @Override
     public String toString() {
-        return "{" +
-            " email='" + getEmail() + "'" +
-            ", password='" + getPassword() + "'" +
-            ", intentosFallidos='" + getIntentosFallidos() + "'" +
-            ", bloqueado='" + isBloqueado() + "'" +
-            ", fechaRegistro='" + getFechaRegistro() + "'" +
-            "}";
+        return "{ id='" + getId() + "'"
+                + ", email='" + getEmail() + "'"
+                + ", password='" + getPassword() + "'"
+                + ", intentosFallidos='" + getIntentosFallidos() + "'"
+                + ", bloqueado='" + isBloqueado() + "'"
+                + ", fechaRegistro='" + getFechaRegistro() + "'"
+                + "}";
     }
-    
+
 }

@@ -7,11 +7,11 @@ public class Persona {
     private final int id;
     private String nombre;
 
-    public Persona(int id) {
+    protected Persona(int id) {
         this.id = id;
     }
 
-    public Persona(int id, String nombre) {
+    protected Persona(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
