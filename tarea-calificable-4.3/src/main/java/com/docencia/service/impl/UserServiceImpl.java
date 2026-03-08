@@ -7,6 +7,11 @@ import com.docencia.repository.IUserRepository;
 import com.docencia.repository.impl.UserRepositoryImpl;
 import com.docencia.service.IUserService;
 
+/**
+ * Clase UserServiceImpl
+ * @author hectorpoleo
+ * @version 1.0.0
+ */
 public class UserServiceImpl implements IUserService{
     private final IUserRepository userRepository;
 

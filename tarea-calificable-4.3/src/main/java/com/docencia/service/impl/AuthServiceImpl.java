@@ -3,6 +3,11 @@ package com.docencia.service.impl;
 import com.docencia.model.Usuario;
 import com.docencia.service.IAuthService;
 
+/**
+ * Clase AuthServiceImpl
+ * @author hectorpoleo
+ * @version 1.0.0
+ */
 public class AuthServiceImpl implements IAuthService{
 
     @Override
