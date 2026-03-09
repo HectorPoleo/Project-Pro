@@ -23,8 +23,8 @@ public class Usuario extends Persona {
         this.fechaRegistro = null;
     }
 
-    public Usuario(int id, String email, String password) {
-        super(id);
+    public Usuario(int id,String nombre, String email, String password) {
+        super(id, nombre);
         this.email = email;
         this.password = password;
         this.intentosFallidos = 0;

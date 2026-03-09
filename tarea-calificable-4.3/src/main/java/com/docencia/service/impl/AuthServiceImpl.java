@@ -1,7 +1,9 @@
 package com.docencia.service.impl;
 
 import com.docencia.model.Usuario;
+import com.docencia.repository.IUserRepository;
 import com.docencia.service.IAuthService;
+import com.docencia.util.Validaciones;
 
 /**
  * Clase AuthServiceImpl
@@ -10,10 +12,21 @@ import com.docencia.service.IAuthService;
  */
 public class AuthServiceImpl implements IAuthService{
 
+    final IUserRepository userRepository;
+
+    public AuthServiceImpl(IUserRepository userRepository){
+        this.userRepository = userRepository;
+    }
+
     @Override
     public Usuario register(int id, String nombre, String email, String password) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'register'");
+        if(id < 1 || !Validaciones.validarEmail(email) || !Validaciones.passwordValido(password)){
+            return null;
+        }    
+        email = Validaciones.normalizarEmail(email);
+        Usuario usuario = new Usuario(id, nombre, email, password);
+        userRepository.save(usuario);
+        return usuario;
     }
 
     @Override
