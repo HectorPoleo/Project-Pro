@@ -4,12 +4,26 @@ import java.util.regex.Pattern;
 
 import com.docencia.model.Usuario;
 
+/**
+ * Clase Validaciones
+ * @author hectorpoleo
+ * @version 1.0.0
+ */
 public class Validaciones extends Usuario {
 
+    /**
+     * Metodo para inicializar Usuario
+     * @param id
+     */
     public Validaciones(int id) {
         super(id);
     }
 
+    /**
+     * Metodo para normalizar el email
+     * @param email
+     * @return String
+     */
     public static String normalizarEmail(String email){
         if(email == null || email.isBlank()){
             return null;
@@ -17,24 +31,58 @@ public class Validaciones extends Usuario {
         return email.trim().toLowerCase();
     }
 
+    /**
+     * Metodo para inicializar cualquier valor que se vea afectado por mayus
+     * @param valor
+     * @return String
+     */
+    public static String normalizarValor(String valor) {
+        if(valor == null || valor.isBlank()){
+            return null;
+        }
+        return valor.trim();
+    }
+
+    /**
+     * Metodo para validar email
+     * @param email
+     * @return boolean
+     */
     public static boolean  validarEmail(String email) {
         email = normalizarEmail(email);
+        System.out.println(email);
         if(email == null){
             return false;
         }
-        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
-        return Pattern.matches(email, regex);
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+        return Pattern.matches(regex, email);
     }
 
-    public static boolean passwordValido(String password){
-        return true;
+    /**
+     * Metodo para validar contraseñas
+     * @param password
+     * @return boolean
+     */
+    public static boolean validarPassword(String password){
+        password = normalizarValor(password);
+        if(password == null){
+            return false;
+        }
+        String regex = "^.{6,}$";
+        return Pattern.matches(regex, password);
     }
 
-    public static void validarNombre(String nombre){
-        return;
-    }
-
-    public static void validarPassword(String password) {
-        return;
+    /**
+     * Metodo para validar nombre
+     * @param nombre
+     * @return boolean
+     */
+    public static boolean validarNombre(String nombre){
+        nombre = normalizarValor(nombre);
+        if(nombre == null){
+            return false;
+        }
+        String regex = "^[A-Za-zÁÉÍÓÚáéíóúÑñ]{5,}$";
+        return Pattern.matches(regex, nombre);
     }
 }

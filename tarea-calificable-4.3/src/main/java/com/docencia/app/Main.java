@@ -1,13 +1,13 @@
 package com.docencia.app;
 
+import java.util.Scanner;
+
 import com.docencia.repository.IUserRepository;
 import com.docencia.repository.impl.UserRepositoryImpl;
 import com.docencia.service.IAuthService;
 import com.docencia.service.IUserService;
 import com.docencia.service.impl.AuthServiceImpl;
 import com.docencia.service.impl.UserServiceImpl;
-
-import java.util.Scanner;
 
 public class Main {
 
@@ -80,7 +80,7 @@ public class Main {
     String pass = SC.nextLine();
 
     boolean ok = auth.login(email, pass);
-    System.out.println(ok ? "✅ Login correcto" : "❌ Login incorrecto");
+    System.out.println(ok ? "Login correcto" : "Login incorrecto");
   }
 
   private static void listar(IUserService users) {

@@ -12,7 +12,7 @@ import com.docencia.repository.IUserRepository;
  * @version 1.0.0
  */
 public class UserRepositoryImpl implements IUserRepository{
-    final Set<Usuario> usuarios;
+    Set<Usuario> usuarios;
     public UserRepositoryImpl(){
         usuarios = new HashSet<>();
     }
@@ -45,7 +45,10 @@ public class UserRepositoryImpl implements IUserRepository{
         if(usuario == null){
             throw new IllegalArgumentException();
         }
-        if(existsByEmail(usuario.getEmail())){
+        if(!existsByEmail(usuario.getEmail())){
+            usuarios.add(usuario);
+        }else{
+            usuarios.remove(usuario);
             usuarios.add(usuario);
         }
     }
@@ -61,10 +64,7 @@ public class UserRepositoryImpl implements IUserRepository{
         if(email == null){
             return false;
         }
-        if(usuarios.contains(new Usuario(email))){
-            return true;
-        }
-        return false;
+        return usuarios.contains(new Usuario(email));
     }
 
     /**
