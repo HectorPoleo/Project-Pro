@@ -17,4 +17,6 @@ public interface IUserService {
   Usuario cambiarNombre(String email, String nuevoNombre);
 
   Usuario cambiarPassword(String email, String nuevaPassword);
+
+  Set<Usuario> obtenerBloqueados();
 }

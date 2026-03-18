@@ -2,22 +2,12 @@ package com.docencia.util;
 
 import java.util.regex.Pattern;
 
-import com.docencia.model.Usuario;
-
 /**
  * Clase Validaciones
  * @author hectorpoleo
  * @version 1.0.0
  */
-public class Validaciones extends Usuario {
-
-    /**
-     * Metodo para inicializar Usuario
-     * @param id
-     */
-    public Validaciones(int id) {
-        super(id);
-    }
+public class Validaciones{
 
     /**
      * Metodo para normalizar el email

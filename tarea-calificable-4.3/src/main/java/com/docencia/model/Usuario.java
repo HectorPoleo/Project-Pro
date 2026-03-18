@@ -96,4 +96,11 @@ public class Usuario extends Persona {
                 + "}";
     }
 
+    /**
+     * Funcion que transforma un usuario a formato CSV
+     * @return String formato CSV
+     */
+    public String toCsv() {
+        return "\n" + this.getId() + ";" + this.getNombre() + ";" +this.getEmail() + ";" +this.getPassword();
+    }
 }

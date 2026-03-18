@@ -46,7 +46,7 @@ public abstract class FileAbstract {
                 String[] datos = line.split(";");
                 Usuario usuarioLeido = new Usuario(Integer.parseInt(datos[0]), datos[1], datos[2], datos[3]);
                 usuariosLectura.add(usuarioLeido);
-            }   
+            }
         } catch (IOException e){
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }

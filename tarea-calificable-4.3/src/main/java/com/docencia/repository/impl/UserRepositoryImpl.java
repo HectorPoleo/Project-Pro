@@ -1,20 +1,21 @@
 package com.docencia.repository.impl;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import com.docencia.model.Usuario;
 import com.docencia.repository.IUserRepository;
+import com.docencia.repository.file.FileCsv;
 
 /**
  * Clase UserRepositoryImpl
  * @author hectorpoleo
  * @version 1.0.0
  */
-public class UserRepositoryImpl implements IUserRepository{
+public class UserRepositoryImpl extends FileCsv implements IUserRepository{
     Set<Usuario> usuarios;
     public UserRepositoryImpl(){
-        usuarios = new HashSet<>();
+        super();
+        this.usuarios = super.read();
     }
 
     /**
@@ -47,9 +48,11 @@ public class UserRepositoryImpl implements IUserRepository{
         }
         if(!existsByEmail(usuario.getEmail())){
             usuarios.add(usuario);
+            this.write(usuario.toCsv());
         }else{
             usuarios.remove(usuario);
             usuarios.add(usuario);
+            this.write(usuario.toCsv());
         }
     }
 
